@@ -22,8 +22,8 @@ importers:
   packages/satori-html:
     dependencies:
       ultrahtml:
-        specifier: ^1.2.0
-        version: 1.5.3
+        specifier: ^1.6.0
+        version: 1.6.0
     devDependencies:
       '@resvg/resvg-js':
         specifier: ^2.1.0
@@ -1754,8 +1754,8 @@ packages:
     engines: {node: '>=4.2.0'}
     hasBin: true
 
-  ultrahtml@1.5.3:
-    resolution: {integrity: sha512-GykOvZwgDWZlTQMtp5jrD4BVL+gNn2NVlVafjcFUJ7taY20tqYdwdoWBFy6GBJsNTZe1GkGPkSl5knQAjtgceg==}
+  ultrahtml@1.6.0:
+    resolution: {integrity: sha512-R9fBn90VTJrqqLDwyMph+HGne8eqY1iPfYhPzZrvKpIfwkWZbcYlfpsb8B9dTvBfpy1/hqAD7Wi8EKfP9e8zdw==}
 
   undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
@@ -3810,7 +3810,7 @@ snapshots:
 
   typescript@4.9.5: {}
 
-  ultrahtml@1.5.3: {}
+  ultrahtml@1.6.0: {}
 
   undici-types@5.26.5: {}
 

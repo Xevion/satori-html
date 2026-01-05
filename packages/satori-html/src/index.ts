@@ -39,7 +39,7 @@ const TW_NAMES = new Set([
   `tracking-`,
   `z-`,
 ]);
-const inliner = inlineCSS({ useObjectSyntax: true });
+const inliner = inlineCSS();
 const tw = (doc: DoctypeNode) => {
   walkSync(doc, (node) => {
     if (node.type !== ELEMENT_NODE) return;
@@ -106,10 +106,23 @@ export function html(
     } else if (node.type === ELEMENT_NODE) {
       newNode.type = node.name;
       const { style, "": _, ...props } = node.attributes as any;
-      if (typeof style === "object") {
+      if (style) {
         props["style"] = {};
-        for (const [decl, value] of Object.entries(style)) {
-          props["style"][camelize(decl)] = value;
+        if (typeof style === "string") {
+          // Parse CSS string to object (Bun compatibility)
+          const declarations = style.split(";").filter((d: string) => d.trim());
+          for (const decl of declarations) {
+            const colonIndex = decl.indexOf(":");
+            if (colonIndex === -1) continue;
+            const property = decl.substring(0, colonIndex).trim();
+            const value = decl.substring(colonIndex + 1).trim();
+            props["style"][camelize(property)] = value;
+          }
+        } else if (typeof style === "object") {
+          // Handle object syntax (backward compatibility)
+          for (const [decl, value] of Object.entries(style)) {
+            props["style"][camelize(decl)] = value;
+          }
         }
       }
       props.children = [] as unknown as string;

@@ -13,9 +13,9 @@
   "scripts": {
     "dev": "vitest dev",
     "build": "tsc -p .",
-    "test": "vitest run test/node.test.ts",
+    "test": "vitest run",
     "test:node": "vitest run test/node.test.ts",
-    "test:bun": "bun test test/bun.test.ts"
+    "test:bun": "vitest run test/bun.test.ts"
   },
   "files": [
     "dist",
@@ -33,7 +33,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "ultrahtml": "^1.2.0"
+    "ultrahtml": "^1.6.0"
   },
   "devDependencies": {
     "@resvg/resvg-js": "^2.1.0",

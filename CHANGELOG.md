@@ -1,5 +1,12 @@
 # satori-html
 
+## [0.5.0](https://github.com/Xevion/satori-html/compare/v0.4.1...v0.5.0) (2026-01-05)
+
+
+### Features
+
+* **ci:** setup release-please ([06fca6b](https://github.com/Xevion/satori-html/commit/06fca6bc6ab87cef89baee275f04548fdd36e8a5))
+
 ## 0.4.0
 
 ### Major Changes

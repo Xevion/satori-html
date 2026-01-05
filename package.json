@@ -1,7 +1,7 @@
 {
   "name": "@xevion/satori-html",
   "type": "module",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "convert HTML strings to satori-compatible VDOM objects for SVG generation",
   "repository": {
     "type": "git",

@@ -1,27 +1,38 @@
-# Satori HTML
+# satori-html
 
-Generate a [satori](https://github.com/vercel/satori)-friendly VDOM from a string of HTML.
+[![npm version](https://img.shields.io/npm/v/@xevion/satori-html.svg)](https://www.npmjs.com/package/@xevion/satori-html)
+[![CI](https://github.com/Xevion/satori-html/actions/workflows/ci.yml/badge.svg)](https://github.com/Xevion/satori-html/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue.svg)](https://www.typescriptlang.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-20+-green.svg)](https://nodejs.org/)
+[![Bun](https://img.shields.io/badge/Bun-compatible-000?logo=bun&logoColor=fff)](https://bun.sh/)
 
-## What is this?
+convert HTML strings to [satori](https://github.com/vercel/satori)-compatible VDOM objects for SVG generation.
 
-[Satori](https://github.com/vercel/satori) is an amazing library for generating SVG strings from pure HTML and CSS.
+## installation
 
-Unfortunately, it is built on top of React's JSX and [expects "React-elements-like objects"](https://github.com/vercel/satori#use-without-jsx). This library (`satori-html`) bridges that gap, generating the necessary VDOM object from a string of HTML.
+```bash
+npm install @xevion/satori-html
+pnpm add @xevion/satori-html
+bun add @xevion/satori-html
+yarn add @xevion/satori-html
+```
 
-> **Note**
-> Satori supports a limited subset of HTML and CSS features, due to its special use case. Please use inline styles rather than class-based styling!
+## what is this?
+
+[satori](https://github.com/vercel/satori) generates SVG from HTML and CSS, but [expects React-like VDOM objects](https://github.com/vercel/satori#use-without-jsx) rather than HTML strings. this library bridges that gap by parsing HTML into the VDOM format satori requires.
+
+> [!NOTE]
+> forked from [natemoo-re/satori-html](https://github.com/natemoo-re/satori-html) to fix critical bugs and modernize the codebase.
 
 ## Example
 
-### API
-
-`satori-html` exports an `html` helper, which transforms HTML strings into an object that is compatible with `satori`.
-
 ```js
 import satori from "satori";
-import { html } from "satori-html";
+import { html } from "@xevion/satori-html";
 
 const markup = html`<div style="color: black;">hello, world</div>`;
+
 // See https://github.com/vercel/satori#documentation
 const svg = await satori(markup, {
   width: 600,

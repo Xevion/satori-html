@@ -1,5 +1,40 @@
 # satori-html
 
+## 0.4.0
+
+### Major Changes
+
+- **[BREAKING]** Modernized codebase with major dependency upgrades
+  - Upgraded `satori` from 0.0.38 → 0.18.3
+  - Upgraded `TypeScript` from 4.9 → 5.9
+  - Upgraded `Vitest` from 0.24 → 3.2
+  - **Requires Node 20+** (dropped Node 18 support)
+
+- **[BREAKING]** Flattened monorepo structure
+  - Package now lives at repository root instead of `packages/satori-html/`
+  - Updated to use Vitest native snapshots
+
+- **Enhanced TypeScript support**
+  - Added proper type exports: `VNode`, `CSSProperties`, `VNodeProps`, `VNodeChild`
+  - Strict TypeScript configuration with better type safety
+
+- **Improved Tailwind utility detection**
+  - Expanded from ~30 to 60+ Tailwind utility patterns
+  - Better coverage for responsive/state variants, transforms, animations, and modern utilities
+
+- **Fixed Bun compatibility**
+  - Removed broken `useObjectSyntax` approach
+  - Switched to manual CSS string parsing for cross-runtime compatibility
+
+### Repository Changes
+
+- Forked and maintained by Ryan Walters ([@Xevion](https://github.com/Xevion))
+- Repository: https://github.com/Xevion/satori-html
+
+---
+
+## Previous Releases (by Nate Moore)
+
 ## 0.3.2
 
 ### Patch Changes

@@ -30,7 +30,7 @@ export function integrationSuite(runner: TestRunner) {
           width: 100,
           height: 100,
           fonts,
-        },
+        }
       );
       if (expect(toImage(result, 100)).toMatchImageSnapshot) {
         expect(toImage(result, 100)).toMatchImageSnapshot!();
@@ -49,7 +49,7 @@ export function integrationSuite(runner: TestRunner) {
           width: 100,
           height: 100,
           fonts,
-        },
+        }
       );
       if (expect(toImage(result, 100)).toMatchImageSnapshot) {
         expect(toImage(result, 100)).toMatchImageSnapshot!();
@@ -90,7 +90,7 @@ export function integrationSuite(runner: TestRunner) {
           width: 800,
           height: 150,
           fonts,
-        },
+        }
       );
       if (expect(toImage(result, 100)).toMatchImageSnapshot) {
         expect(toImage(result, 100)).toMatchImageSnapshot!();

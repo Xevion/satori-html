@@ -26,7 +26,7 @@ export function htmlSuite(runner: TestRunner) {
           props: {
             children: "Hello world",
           },
-        }),
+        })
       );
     });
 
@@ -38,7 +38,7 @@ export function htmlSuite(runner: TestRunner) {
           props: {
             children: "Hello world",
           },
-        }),
+        })
       );
     });
 
@@ -50,7 +50,7 @@ export function htmlSuite(runner: TestRunner) {
           props: {
             children: "Hello world",
           },
-        }),
+        })
       );
     });
 
@@ -68,7 +68,7 @@ export function htmlSuite(runner: TestRunner) {
             },
             children: "Hello world",
           },
-        }),
+        })
       );
     });
 
@@ -89,7 +89,7 @@ export function htmlSuite(runner: TestRunner) {
             class: "cool",
             children: "Hello world",
           },
-        }),
+        })
       );
     });
 
@@ -104,7 +104,7 @@ export function htmlSuite(runner: TestRunner) {
             style: { backgroundImage: "url(https://example.com/img.png)" },
             children: [],
           },
-        }),
+        })
       );
     });
 
@@ -148,7 +148,7 @@ export function htmlSuite(runner: TestRunner) {
               width: "100%",
             },
           },
-        }),
+        })
       );
     });
 
@@ -166,7 +166,7 @@ export function htmlSuite(runner: TestRunner) {
               display: "flex",
             },
           },
-        }),
+        })
       );
     });
   });

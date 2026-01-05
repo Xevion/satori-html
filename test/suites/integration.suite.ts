@@ -1,7 +1,7 @@
-import type { TestRunner } from "./types";
-import { html } from "../../src/index";
-import { initFonts, toImage } from "../utils";
-import satori, { SatoriOptions } from "satori";
+import type { TestRunner } from "./types.js";
+import { html } from "../../src/index.js";
+import { initFonts, toImage } from "../utils.js";
+import satori, { type SatoriOptions } from "satori";
 
 export function integrationSuite(runner: TestRunner) {
   const { describe, test, expect } = runner;
@@ -18,9 +18,9 @@ export function integrationSuite(runner: TestRunner) {
         height: 100,
         fonts,
       });
-      if (expect(toImage(result, 100)).toMatchImageSnapshot) {
-        expect(toImage(result, 100)).toMatchImageSnapshot!();
-      }
+      await expect(toImage(result, 100)).toMatchFileSnapshot(
+        "./__snapshots__/basic-html.png",
+      );
     });
 
     test("should handle basic css", async () => {
@@ -30,11 +30,11 @@ export function integrationSuite(runner: TestRunner) {
           width: 100,
           height: 100,
           fonts,
-        }
+        },
       );
-      if (expect(toImage(result, 100)).toMatchImageSnapshot) {
-        expect(toImage(result, 100)).toMatchImageSnapshot!();
-      }
+      await expect(toImage(result, 100)).toMatchFileSnapshot(
+        "./__snapshots__/basic-css.png",
+      );
     });
 
     test("should handle style", async () => {
@@ -49,11 +49,11 @@ export function integrationSuite(runner: TestRunner) {
           width: 100,
           height: 100,
           fonts,
-        }
+        },
       );
-      if (expect(toImage(result, 100)).toMatchImageSnapshot) {
-        expect(toImage(result, 100)).toMatchImageSnapshot!();
-      }
+      await expect(toImage(result, 100)).toMatchFileSnapshot(
+        "./__snapshots__/style-tag.png",
+      );
     });
 
     test("should handle tailwind", async () => {
@@ -90,11 +90,11 @@ export function integrationSuite(runner: TestRunner) {
           width: 800,
           height: 150,
           fonts,
-        }
+        },
       );
-      if (expect(toImage(result, 100)).toMatchImageSnapshot) {
-        expect(toImage(result, 100)).toMatchImageSnapshot!();
-      }
+      await expect(toImage(result, 100)).toMatchFileSnapshot(
+        "./__snapshots__/tailwind.png",
+      );
     });
   });
 }

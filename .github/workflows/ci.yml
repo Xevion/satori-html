@@ -70,7 +70,7 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: build-output
-          path: packages/*/dist
+          path: dist
           retention-days: 1
 
   test:
@@ -81,7 +81,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node: [18, 20, 22, 24]
+        node: [20, 22, 24]
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -101,7 +101,7 @@ jobs:
         uses: actions/download-artifact@v7
         with:
           name: build-output
-          path: packages
+          path: dist
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -138,7 +138,7 @@ jobs:
         uses: actions/download-artifact@v7
         with:
           name: build-output
-          path: packages
+          path: dist
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile

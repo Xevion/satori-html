@@ -1,7 +1,6 @@
-import { beforeAll, expect } from "vitest";
+import { beforeAll } from "vitest";
 import fs from "node:fs/promises";
 import { Resvg } from "@resvg/resvg-js";
-import { toMatchImageSnapshot } from "jest-image-snapshot";
 
 import type { SatoriOptions } from "satori";
 import { fileURLToPath } from "node:url";
@@ -21,7 +20,7 @@ export function initFonts(callback: (fonts: SatoriOptions["fonts"]) => void) {
   });
 }
 
-export function toImage(svg: string, width: number = 100) {
+export function toImage(svg: string, width: number = 100): Buffer {
   const resvg = new Resvg(svg, {
     fitTo: {
       mode: "width",
@@ -39,13 +38,3 @@ export function toImage(svg: string, width: number = 100) {
   const pngData = resvg.render();
   return pngData.asPng();
 }
-
-declare global {
-  namespace jest {
-    interface Matchers<R> {
-      toMatchImageSnapshot(): R;
-    }
-  }
-}
-
-expect.extend({ toMatchImageSnapshot });

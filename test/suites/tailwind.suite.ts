@@ -1,5 +1,5 @@
-import type { TestRunner } from "./types";
-import { html } from "../../src/index";
+import type { TestRunner } from "./types.js";
+import { html } from "../../src/index.js";
 
 export function tailwindSuite(runner: TestRunner) {
   const { describe, test, expect } = runner;

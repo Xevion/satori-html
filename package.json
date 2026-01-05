@@ -6,6 +6,8 @@
   "scripts": {
     "build": "pnpm -r run build",
     "test": "pnpm -r run test",
+    "test:node": "pnpm -r run test:node",
+    "test:bun": "pnpm -r run test:bun",
     "lint": "prettier \"**/*.{js,ts,md,json}\"",
     "format": "pnpm -w run lint --write"
   },
